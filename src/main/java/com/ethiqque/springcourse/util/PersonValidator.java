@@ -27,6 +27,6 @@ public class PersonValidator implements Validator {
         Person person = (Person) o;
 
         if (personDAO.getPersonByFullName(person.getFullName()).isPresent())
-            errors.rejectValue("fullName", "", "Человек с таким ФИО уже существует");
+            errors.rejectValue("fullName", "", "Person with this name already exists");
     }
 }
